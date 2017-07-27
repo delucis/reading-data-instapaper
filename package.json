@@ -1,0 +1,25 @@
+{
+  "name": "@delucis/reading-data-instapaper",
+  "version": "0.0.1",
+  "description": "Instapaper API plugin for @delucis/reading-data.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delucis/reading-data-instapaper.git"
+  },
+  "author": "Chris Swithinbank <swithinbank@gmail.com> (http://chrisswithinbank.net/)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/delucis/reading-data-instapaper/issues"
+  },
+  "homepage": "https://github.com/delucis/reading-data-instapaper#readme",
+  "dependencies": {
+    "package.json": "^2.0.1"
+  }
+}
