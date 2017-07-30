@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nyc mocha --reporter spec"
+    "test": "nyc mocha --reporter spec",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,12 @@
   "homepage": "https://github.com/delucis/reading-data-instapaper#readme",
   "dependencies": {
     "package.json": "^2.0.1"
+  },
+  "devDependencies": {
+    "@delucis/reading-data": "0.0.1",
+    "chai": "^4.1.0",
+    "coveralls": "^2.13.1",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
   }
 }
