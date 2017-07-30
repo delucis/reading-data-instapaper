@@ -1,5 +1,7 @@
 # @delucis/reading-data-instapaper
 
+[![Build Status](https://travis-ci.org/delucis/reading-data-instapaper.svg?branch=master)](https://travis-ci.org/delucis/reading-data-instapaper)
+
 A plugin for [`@delucis/reading-data`](https://github.com/delucis/reading-data)
 that fetches bookmarks from the [Instapaper API](https://www.instapaper.com/api).
 
