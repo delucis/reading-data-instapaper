@@ -6,6 +6,12 @@ const IT = require('mocha').it
 const EXPECT = require('chai').expect
 const READING_DATA = require('@delucis/reading-data')
 const RDInstapaper = require('../index')
+const CREDENTIALS = {
+  apiKey: process.env.INSTAPAPER_API_KEY,
+  apiSecret: process.env.INSTAPAPER_API_SECRET,
+  userKey: process.env.INSTAPAPER_USER_KEY,
+  userSecret: process.env.INSTAPAPER_USER_SECRET
+}
 
 BEFORE_EACH(function () {
   READING_DATA.uninstall()
