@@ -47,4 +47,33 @@ DESCRIBE('ReadingDataInstapaper', function () {
       EXPECT(e).to.be.an('error')
     }
   })
+
+  IT('should fetch some data during ReadingData#run()', async function () {
+    this.timeout(20000)
+    let testScope = 'instaTest'
+    let config = Object.assign(CREDENTIALS, {
+      scope: testScope
+    })
+    READING_DATA.use(RDInstapaper, config)
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data).to.have.property(testScope)
+    EXPECT(READING_DATA.data[testScope]).to.have.property('bookmarks')
+    EXPECT(READING_DATA.data[testScope].bookmarks).to.be.an('array')
+  })
+
+  IT('should fetch a bookmark’s text if config.fetchText is true', async function () {
+    this.timeout(20000)
+    let testScope = 'textFetcherTest'
+    let config = Object.assign(CREDENTIALS, {
+      scope: testScope,
+      limit: 1,
+      fetchText: true
+    })
+    READING_DATA.use(RDInstapaper, config)
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data).to.have.property(testScope)
+    EXPECT(READING_DATA.data[testScope]).to.have.property('bookmarks')
+    EXPECT(READING_DATA.data[testScope].bookmarks).to.be.an('array')
+    EXPECT(READING_DATA.data[testScope].bookmarks[0]).to.have.property('text')
+  })
 })
