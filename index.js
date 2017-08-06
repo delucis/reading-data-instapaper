@@ -107,8 +107,9 @@ const ReadingDataInstapaper = (function () {
 
       // Set the URL for the configured API version
       let apiUrl = 'https://www.instapaper.com/api/' + config.apiVersion
-      // Throw out any attempt to use fetch() without configuring API keys & user credentials
 
+      // Throw out any attempt to use fetch() without configuring API keys and
+      // user credentials
       if (!config.hasOwnProperty('apiKey') || !config.hasOwnProperty('apiSecret')) {
         throw new Error('ReadingDataInstapaper#fetch(): config must contain `apiKey` and `apiSecret`')
       }
