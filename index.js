@@ -149,7 +149,12 @@ const ReadingDataInstapaper = (function () {
           }
         }))
       }
+
+      if (config.useCache) {
+        return merge(data, responseData)
+      } else {
         return responseData
+      }
     }
   }
 }())
