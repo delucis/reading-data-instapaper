@@ -16,13 +16,15 @@ const ReadingDataInstapaper = (function () {
      * @property {String} folder_id='archive' - The folder to request from the Instapaper API.
      * @property {Number} apiVersion=1.1      - The version of the Instapaper API that should be queried.
      * @property {Boolean} fetchText=false    - Whether or not to try to retrieve a bookmark’s full text.
+     * @property {Boolean} useCache=false     - Whether or not to use cached/preloaded data.
      */
     config: {
       scope: 'instapaper',
       limit: 5,
       folder_id: 'archive',
       apiVersion: 1.1,
-      fetchText: false
+      fetchText: false,
+      useCache: false
     },
 
     /**
