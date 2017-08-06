@@ -32,6 +32,44 @@ const ReadingDataInstapaper = (function () {
     return ids.join()
   }
 
+  /**
+   * Merge an Instapaper API response with pre-existing (or preloaded) data,
+   * and only overwrite new values, pushing new bookmarks to the existing
+   * `.bookmarks` array.
+   * @memberof module:reading-data-instapaper
+   * @private
+   * @param  {Object} existingData    An existing Instapaper API response object.
+   * @param  {Object[]}  existingData.bookmarks An array of bookmark objects.
+   * @param  {Object} responseData    A new Instapaper API response object.
+   * @param  {Object[]}  responseData.bookmarks An array of bookmark objects.
+   * @return {Object}                 A merged response object containing new and old bookmarks.
+   */
+  let merge = (existingData = { bookmarks: [] }, responseData) => {
+    for (var key in responseData) {
+      if (responseData.hasOwnProperty(key)) {
+        if (existingData.hasOwnProperty(key)) {
+          // the key already exists, so merging should be gentler
+          if (Array.isArray(existingData[key]) && Array.isArray(responseData[key])) {
+            // Arrays should be merged by pushing response items to the existing array
+            responseData[key].map((item) => { existingData[key].push(item) })
+          } else if (typeof existingData[key] === 'object' && typeof responseData[key] === 'object') {
+            // Objects should be allowed to overwrite existing keys, add new
+            // keys, and preserve old keys
+            Object.assign(existingData[key], responseData[key])
+          } else {
+            // Types don’t match or are primitive, in which case overwrite in
+            // favour of the new value
+            existingData[key] = responseData[key]
+          }
+        } else {
+          // the key doesn’t exist, so create it
+          existingData[key] = responseData[key]
+        }
+      }
+    }
+    return existingData
+  }
+
   return {
     /**
      * Configuration object providing a default configuration to be
