@@ -6,6 +6,21 @@ const instapaper = require('instapaper')
 const log = require('winston')
 
 const ReadingDataInstapaper = (function () {
+  /**
+   * Return an array of bookmark IDs from an array of bookmarks.
+   * @memberof module:reading-data-instapaper
+   * @private
+   * @param  {Array} bookmarks An array of Instapaper bookmarks.
+   * @return {Array}           An array of Instapaper bookmark IDs.
+   */
+  let getBookmarkIDs = (bookmarks) => {
+    let ids = []
+    bookmarks.map((bookmark) => {
+      ids.push(bookmark.bookmark_id)
+    })
+    return ids
+  }
+
   return {
     /**
      * Configuration object providing a default configuration to be
