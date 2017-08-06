@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-reading-data-instapaper.html">reading-data-instapaper</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-reading-data-instapaper.html#~fetch">fetch</a></span></li>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>@delucis/reading-data-instapaper</h1><p><a href="https://travis-ci.org/delucis/reading-data-instapaper"><img src="https://travis-ci.org/delucis/reading-data-instapaper.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/delucis/reading-data-instapaper?branch=master"><img src="https://coveralls.io/repos/github/delucis/reading-data-instapaper/badge.svg?branch=master" alt="Coverage Status"></a></p>
+<p>A plugin for <a href="https://github.com/delucis/reading-data"><code>@delucis/reading-data</code></a>
+that fetches bookmarks from the <a href="https://www.instapaper.com/api">Instapaper API</a>.</p>
+<h2>Installation</h2><pre class="prettyprint source lang-sh"><code>npm install --save @delucis/reading-data-instapaper</code></pre><h2>Usage</h2><p>To use this module, you will need to
+<a href="https://www.instapaper.com/main/request_oauth_consumer_token">request tokens to use Instapaper’s API</a>
+and have log-in details for an Instapaper user.</p>
+<pre class="prettyprint source lang-js"><code>const RD = require('@delucis/reading-data')
+const RD_INSTAPAPER = require('@delucis/reading-data-instapaper')
+
+RD.use(RD_INSTAPAPER, {
+  scope: 'instapaper',
+  apiKey: '????????????????????????',
+  apiSecret: '????????????????????????',
+  userKey: 'instapaper.user@gmail.com',
+  userSecret: 'goldfish123'
+})
+
+RD.run().then((res) => {
+  console.log(res.data.instapaper)
+})</code></pre><h2>Options</h2><p><code>reading-data-instapaper</code> can be used with various options, some of which are
+required for it to work.</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>default</th>
+<th style="text-align:center">required?</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apiKey</code></td>
+<td><code>String</code></td>
+<td></td>
+<td style="text-align:center">✔︎</td>
+<td>an Instapaper API consumer key</td>
+</tr>
+<tr>
+<td><code>apiSecret</code></td>
+<td><code>String</code></td>
+<td></td>
+<td style="text-align:center">✔︎</td>
+<td>an Instapaper API consumer secret</td>
+</tr>
+<tr>
+<td><code>apiVersion</code></td>
+<td><code>Number</code></td>
+<td><code>1.1</code></td>
+<td style="text-align:center"></td>
+<td>the version of the Instapaper API to use (<code>1</code> or <code>1.1</code>)</td>
+</tr>
+<tr>
+<td><code>fetchText</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td style="text-align:center"></td>
+<td>should the <code>fetch()</code> method try to retrieve the full text of bookmarks</td>
+</tr>
+<tr>
+<td><code>folder_id</code></td>
+<td><code>String</code></td>
+<td><code>'archive'</code></td>
+<td style="text-align:center"></td>
+<td>the Instapaper folder to request bookmarks from</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td><code>Number</code></td>
+<td><code>5</code></td>
+<td style="text-align:center"></td>
+<td>the maximum number of bookmarks requested from Instapaper (max: <code>500</code>)</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>String</code></td>
+<td><code>'instapaper'</code></td>
+<td style="text-align:center"></td>
+<td>the scope under which <code>reading-data</code> will store this plugin’s data</td>
+</tr>
+<tr>
+<td><code>useCache</code></td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td style="text-align:center"></td>
+<td>should the <code>fetch()</code> method try to use preloaded or existing data</td>
+</tr>
+<tr>
+<td><code>userKey</code></td>
+<td><code>String</code></td>
+<td></td>
+<td style="text-align:center">✔︎</td>
+<td>an Instapaper user’s e-mail address</td>
+</tr>
+<tr>
+<td><code>userSecret</code></td>
+<td><code>String</code></td>
+<td></td>
+<td style="text-align:center">✔︎</td>
+<td>an Instapaper user’s password</td>
+</tr>
+</tbody>
+</table></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Mon Aug 07 2017 00:43:48 GMT+0100 (BST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
