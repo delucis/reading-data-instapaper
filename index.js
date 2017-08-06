@@ -124,6 +124,12 @@ const ReadingDataInstapaper = (function () {
         folder_id: config.folder_id
       }
 
+      // If useCache is true, pass IDs of already present bookmarks to the have
+      // parameter of the Instapaper API
+      if (config.useCache) {
+        requestParameters.have = formatHaveString(getBookmarkIDs(data.bookmarks))
+      }
+
       let responseData
       try {
         let res = await client.bookmarks.list(requestParameters)
