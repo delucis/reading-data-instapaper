@@ -52,5 +52,6 @@ name         | type      | default        | required? | description
 `folder_id`  | `String`  | `'archive'`    |           | the Instapaper folder to request bookmarks from
 `limit`      | `Number`  | `5`            |           | the maximum number of bookmarks requested from Instapaper (max: `500`)
 `scope`      | `String`  | `'instapaper'` |           | the scope under which `reading-data` will store this plugin’s data
+`useCache`   | `Boolean` | `false`        |           | should the `fetch()` method try to use preloaded or existing data
 `userKey`    | `String`  |                | ✔︎         | an Instapaper user’s e-mail address
 `userSecret` | `String`  |                | ✔︎         | an Instapaper user’s password
