@@ -101,7 +101,10 @@ const ReadingDataInstapaper = (function () {
      * @param  {Object} context.data Data stored on the ReadingData instance.
      * @return {Object} Data to be stored by ReadingData under this plugin’s scope.
      */
-    fetch: async function ({config, data}) {
+    fetch: async function ({config, data = { bookmarks: [] }} = {}) {
+      // Make sure the plugin’s data object has a useable bookmarks property
+      data.bookmarks = Array.isArray(data.bookmarks) ? data.bookmarks : []
+
       // Set the URL for the configured API version
       let apiUrl = 'https://www.instapaper.com/api/' + config.apiVersion
       // Throw out any attempt to use fetch() without configuring API keys & user credentials
