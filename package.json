@@ -10,7 +10,10 @@
     "build:docs": "jsdoc --configure .jsdoc.json --verbose",
     "clean:docs": "rimraf docs/",
     "test": "nyc mocha --reporter spec",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "preversion": "npm run test",
+    "version": "npm run clean:docs && npm run build:docs && git add -A docs",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
