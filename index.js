@@ -116,17 +116,17 @@ const ReadingDataInstapaper = (function () {
       // Initialise Instapaper client with credentials
       let client = instapaper(config.apiKey, config.apiSecret, { apiUrl: apiUrl })
       client.setUserCredentials(config.userKey, config.userSecret)
-      let d
+      let responseData
       try {
         let res = await client.bookmarks.list({ limit: config.limit, folder_id: config.folder_id })
-        d = JSON.parse(res)
+        responseData = JSON.parse(res)
       } catch (e) {
         log.error('ReadingDataInstapaper#fetch(): error parsing Instapaper API response.\n', e)
       }
 
       // Fetch full text from the Instapaper API
-      if (config.fetchText && d.hasOwnProperty('bookmarks')) {
-        await Promise.all(d.bookmarks.map(async bookmark => {
+      if (config.fetchText && responseData.hasOwnProperty('bookmarks')) {
+        await Promise.all(responseData.bookmarks.map(async bookmark => {
           try {
             log.debug('ReadingDataInstapaper#fetch(): fetching full text for bookmark', bookmark.bookmark_id)
             bookmark.text = await client.bookmarks.getText(bookmark.bookmark_id)
@@ -135,7 +135,7 @@ const ReadingDataInstapaper = (function () {
           }
         }))
       }
-      return d
+        return responseData
     }
   }
 }())
