@@ -116,9 +116,14 @@ const ReadingDataInstapaper = (function () {
       // Initialise Instapaper client with credentials
       let client = instapaper(config.apiKey, config.apiSecret, { apiUrl: apiUrl })
       client.setUserCredentials(config.userKey, config.userSecret)
+      let requestParameters = {
+        limit: config.limit,
+        folder_id: config.folder_id
+      }
+
       let responseData
       try {
-        let res = await client.bookmarks.list({ limit: config.limit, folder_id: config.folder_id })
+        let res = await client.bookmarks.list(requestParameters)
         responseData = JSON.parse(res)
       } catch (e) {
         log.error('ReadingDataInstapaper#fetch(): error parsing Instapaper API response.\n', e)
