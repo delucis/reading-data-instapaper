@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build:docs": "jsdoc --configure .jsdoc.json --verbose",
+    "clean:docs": "rimraf docs/",
     "test": "nyc mocha --reporter spec",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
