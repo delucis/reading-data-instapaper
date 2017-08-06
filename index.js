@@ -39,12 +39,14 @@ const ReadingDataInstapaper = (function () {
       // Set the URL for the configured API version
       let apiUrl = 'https://www.instapaper.com/api/' + config.apiVersion
       // Throw out any attempt to use fetch() without configuring API keys & user credentials
+
       if (!config.hasOwnProperty('apiKey') || !config.hasOwnProperty('apiSecret')) {
         throw new Error('ReadingDataInstapaper#fetch(): config must contain `apiKey` and `apiSecret`')
       }
       if (!config.hasOwnProperty('userKey') || !config.hasOwnProperty('userSecret')) {
         throw new Error('ReadingDataInstapaper#fetch(): config must contain `userKey` and `userSecret`')
       }
+
       // Initialise Instapaper client with credentials
       let client = instapaper(config.apiKey, config.apiSecret, { apiUrl: apiUrl })
       client.setUserCredentials(config.userKey, config.userSecret)
@@ -55,6 +57,7 @@ const ReadingDataInstapaper = (function () {
       } catch (e) {
         log.error('ReadingDataInstapaper#fetch(): error parsing Instapaper API response.\n', e)
       }
+
       // Fetch full text from the Instapaper API
       if (config.fetchText && d.hasOwnProperty('bookmarks')) {
         await Promise.all(d.bookmarks.map(async bookmark => {
