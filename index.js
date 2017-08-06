@@ -21,6 +21,17 @@ const ReadingDataInstapaper = (function () {
     return ids
   }
 
+  /**
+   * Return a comma-delimited string of bookmark IDs.
+   * @memberof module:reading-data-instapaper
+   * @private
+   * @param  {Array}  ids An array of Instapaper bookmark IDs.
+   * @return {String}     A comma-delimited string of bookmark IDs.
+   */
+  let formatHaveString = (ids) => {
+    return ids.join()
+  }
+
   return {
     /**
      * Configuration object providing a default configuration to be
