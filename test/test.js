@@ -76,4 +76,51 @@ DESCRIBE('ReadingDataInstapaper', function () {
     EXPECT(READING_DATA.data[testScope].bookmarks).to.be.an('array')
     EXPECT(READING_DATA.data[testScope].bookmarks[0]).to.have.property('text')
   })
+
+  IT('should preserve preloaded data when useCache is true', async function () {
+    this.timeout(20000)
+    let testScope = 'haveParameterTest'
+    let config = Object.assign(CREDENTIALS, {
+      scope: testScope,
+      limit: 1,
+      fetchText: false,
+      useCache: true
+    })
+    let bogusBookmark = {
+      bookmark_id: 1,
+      text: 'I’m a bogus preloaded bookmark'
+    }
+    READING_DATA.use(RDInstapaper, config)
+    READING_DATA.preloadData({
+      [testScope]: {
+        bookmarks: [ bogusBookmark ]
+      },
+      user: { type: 'user' }
+    })
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data[testScope].bookmarks).to.have.lengthOf(2)
+    EXPECT(READING_DATA.data[testScope].bookmarks).to.include(bogusBookmark)
+  })
+
+  IT('should preserve previous fetch data when useCache is true', async function () {
+    this.timeout(20000)
+    let testScope = 'cacheTest'
+    let config = Object.assign(CREDENTIALS, {
+      scope: testScope,
+      limit: 1,
+      fetchText: false,
+      useCache: true
+    })
+    READING_DATA.use(RDInstapaper, config)
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data).to.have.property(testScope)
+    EXPECT(READING_DATA.data[testScope]).to.have.property('bookmarks')
+    let firstRunData = READING_DATA.data[testScope].bookmarks
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data).to.have.property(testScope)
+    EXPECT(READING_DATA.data[testScope]).to.have.property('bookmarks')
+    for (let bookmark of firstRunData) {
+      EXPECT(READING_DATA.data[testScope].bookmarks).to.include(bookmark)
+    }
+  })
 })
