@@ -101,7 +101,7 @@ const ReadingDataInstapaper = (function () {
      * @param  {Object} context.data Data stored on the ReadingData instance.
      * @return {Object} Data to be stored by ReadingData under this plugin’s scope.
      */
-    fetch: async function ({config, data = { bookmarks: [] }} = {}) {
+    data: async function ({config, data = { bookmarks: [] }} = {}) {
       // Make sure the plugin’s data object has a useable bookmarks property
       data.bookmarks = Array.isArray(data.bookmarks) ? data.bookmarks : []
 

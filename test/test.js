@@ -22,9 +22,9 @@ DESCRIBE('ReadingDataInstapaper', function () {
     EXPECT(RDInstapaper).to.be.an('object')
   })
 
-  IT('should have a fetch method', function () {
-    EXPECT(RDInstapaper).to.have.property('fetch')
-    EXPECT(RDInstapaper.fetch).to.be.a('function')
+  IT('should have a data method', function () {
+    EXPECT(RDInstapaper).to.have.property('data')
+    EXPECT(RDInstapaper.data).to.be.a('function')
   })
 
   IT('should throw an error if used without API tokens', async function () {
