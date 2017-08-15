@@ -29,13 +29,13 @@
     "package.json": "^2.0.1"
   },
   "devDependencies": {
-    "@delucis/reading-data": "0.0.1",
-    "chai": "^4.1.0",
+    "@delucis/reading-data": "^0.4.0",
+    "chai": "^4.1.1",
     "coveralls": "^2.13.1",
-    "jsdoc": "^3.5.3",
+    "jsdoc": "^3.5.4",
     "minami": "^1.2.3",
-    "mocha": "^3.4.2",
-    "nyc": "^11.0.3",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
     "rimraf": "^2.6.1"
   }
 }
