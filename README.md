@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/delucis/reading-data-instapaper.svg?branch=master)](https://travis-ci.org/delucis/reading-data-instapaper)
 [![Coverage Status](https://coveralls.io/repos/github/delucis/reading-data-instapaper/badge.svg?branch=master)](https://coveralls.io/github/delucis/reading-data-instapaper?branch=master)
+[![npm (scoped)](https://img.shields.io/npm/v/@delucis/reading-data-instapaper.svg)](https://www.npmjs.com/package/@delucis/reading-data-instapaper)
 
 A plugin for [`@delucis/reading-data`](https://github.com/delucis/reading-data)
 that fetches bookmarks from the [Instapaper API](https://www.instapaper.com/api).
