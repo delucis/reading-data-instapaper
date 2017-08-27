@@ -3,6 +3,7 @@
  */
 
 const instapaper = require('instapaper')
+const STRIP = require('strip')
 const log = require('winston')
 
 const ReadingDataInstapaper = (function () {
@@ -144,7 +145,8 @@ const ReadingDataInstapaper = (function () {
         await Promise.all(responseData.bookmarks.map(async bookmark => {
           try {
             log.debug('ReadingDataInstapaper#fetch(): fetching full text for bookmark', bookmark.bookmark_id)
-            bookmark.text = await client.bookmarks.getText(bookmark.bookmark_id)
+            bookmark.html = await client.bookmarks.getText(bookmark.bookmark_id)
+            bookmark.text = STRIP(bookmark.html)
           } catch (e) {
             log.error('ReadingDataInstapaper#fetch(): error retrieving bookmark text for', bookmark.bookmark_id, '\n', e)
           }
