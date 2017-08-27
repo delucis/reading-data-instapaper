@@ -27,6 +27,7 @@
   "homepage": "https://github.com/delucis/reading-data-instapaper#readme",
   "dependencies": {
     "instapaper": "git+https://github.com/dusty/node-instapaper.git",
+    "strip": "^3.0.0",
     "winston": "^2.3.1"
   },
   "devDependencies": {
