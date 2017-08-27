@@ -15,6 +15,7 @@ const CREDENTIALS = {
 
 BEFORE_EACH(function () {
   READING_DATA.uninstall()
+  READING_DATA.clean()
 })
 
 DESCRIBE('ReadingDataInstapaper', function () {
