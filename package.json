@@ -13,7 +13,9 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "preversion": "npm run test",
     "version": "npm run clean:docs && npm run build:docs && git add -A docs",
-    "postversion": "git push --follow-tags"
+    "postversion": "git push --follow-tags",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,8 @@
   "dependencies": {
     "instapaper": "git+https://github.com/dusty/node-instapaper.git",
     "strip": "^3.0.0",
-    "winston": "^2.3.1"
+    "winston": "^2.3.1",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "@delucis/reading-data": "^0.4.0",
@@ -39,5 +42,6 @@
     "mocha": "^3.5.0",
     "nyc": "^11.1.0",
     "rimraf": "^2.6.1"
-  }
+  },
+  "snyk": true
 }
