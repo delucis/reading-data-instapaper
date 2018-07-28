@@ -30,18 +30,18 @@
   "dependencies": {
     "instapaper": "git+https://github.com/dusty/node-instapaper.git",
     "strip": "^3.0.0",
-    "winston": "^2.3.1",
-    "snyk": "^1.88.0"
+    "winston": "^3.0.0",
+    "snyk": "^1.89.1"
   },
   "devDependencies": {
-    "@delucis/reading-data": "^0.4.0",
-    "chai": "^4.1.1",
-    "coveralls": "^2.13.1",
-    "jsdoc": "^3.5.4",
+    "@delucis/reading-data": "^0.8.2",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
+    "jsdoc": "^3.5.5",
     "minami": "^1.2.3",
-    "mocha": "^3.5.0",
-    "nyc": "^11.1.0",
-    "rimraf": "^2.6.1"
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "rimraf": "^2.6.2"
   },
   "snyk": true
 }
