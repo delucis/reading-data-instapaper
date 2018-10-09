@@ -1,23 +1,4 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.11.0
+version: v1.12.0
 ignore: {}
-# patches apply the minimum changes required to fix a vulnerability
-patch:
-  'npm:lodash:20180130':
-    - node-instapaper > lodash:
-        patched: '2018-07-03T01:22:04.503Z'
-      instapaper > lodash:
-        patched: '2018-07-28T16:25:11.960Z'
-  'npm:hoek:20180212':
-    - cryptiles > boom > hoek:
-        patched: '2018-07-28T16:25:11.960Z'
-    - hawk > hoek:
-        patched: '2018-07-28T16:25:11.960Z'
-    - hawk > boom > hoek:
-        patched: '2018-07-28T16:25:11.960Z'
-    - hawk > sntp > hoek:
-        patched: '2018-07-28T16:25:11.960Z'
-    - hawk > cryptiles > boom > hoek:
-        patched: '2018-07-28T16:25:11.960Z'
-    - boom > hoek:
-        patched: '2018-07-28T16:25:11.960Z'
+patch: {}
