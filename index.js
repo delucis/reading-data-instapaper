@@ -5,6 +5,7 @@
 const instapaper = require('instapaper')
 const STRIP = require('strip')
 const log = require('winston')
+log.add(new log.transports.Console())
 
 const ReadingDataInstapaper = (function () {
   /**
