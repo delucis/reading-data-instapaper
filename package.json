@@ -29,19 +29,19 @@
   "homepage": "https://github.com/delucis/reading-data-instapaper#readme",
   "dependencies": {
     "instapaper": "git+https://github.com/delucis/node-instapaper.git",
-    "snyk": "^1.102.0",
+    "snyk": "^1.179.0",
     "strip": "^3.0.0",
-    "winston": "^3.1.0"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@delucis/reading-data": "^0.8.2",
+    "@delucis/reading-data": "^0.8.3",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.2",
-    "jsdoc": "^3.5.5",
+    "coveralls": "^3.0.4",
+    "jsdoc": "^3.6.2",
     "minami": "^1.2.3",
-    "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
-    "rimraf": "^2.6.2"
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.3"
   },
   "snyk": true
 }
