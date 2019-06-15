@@ -3,6 +3,7 @@
   "version": "0.2.1",
   "description": "Instapaper API plugin for @delucis/reading-data.",
   "main": "index.js",
+  "files": [ "index.js" ],
   "directories": {
     "test": "test"
   },
