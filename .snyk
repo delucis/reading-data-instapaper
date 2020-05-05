@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.0
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -10,3 +10,38 @@ patch:
         patched: '2020-02-04T11:39:40.387Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > lodash:
         patched: '2020-02-04T11:39:40.387Z'
+  SNYK-JS-LODASH-567746:
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - winston > async > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/ruby-semver > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-config > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-05T03:09:02.820Z'
