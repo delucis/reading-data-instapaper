@@ -32,7 +32,7 @@
   "homepage": "https://github.com/delucis/reading-data-instapaper#readme",
   "dependencies": {
     "instapaper": "git+https://github.com/delucis/node-instapaper.git",
-    "snyk": "^1.667.0",
+    "snyk": "^1.685.0",
     "strip": "^3.0.0",
     "winston": "^3.2.1"
   },
