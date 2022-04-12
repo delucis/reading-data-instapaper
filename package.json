@@ -34,7 +34,7 @@
     "instapaper": "git+https://github.com/delucis/node-instapaper.git",
     "snyk": "^1.685.0",
     "strip": "^3.0.0",
-    "winston": "^3.2.1"
+    "winston": "^3.3.0"
   },
   "devDependencies": {
     "@delucis/reading-data": "^0.8.3",
